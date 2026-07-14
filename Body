@@ -1,1 +1,151 @@
-# pr bodyms
+# AI Integration for Authority Delivery - Google Gemini Configuration
+
+## Sector: Entrega a Autoridades de Comunicación (Primer Mandato)
+
+### AI Model Configuration
+AI_PROVIDER: google-gemini
+MODEL_NAME: gemini-2.0-flash
+API_VERSION: v1beta
+AUTHENTICATION_TYPE: API_KEY
+
+### API Key Management
+GEMINI_API_KEY: ${GEMINI_API_KEY}  # Usar variable de entorno o secrets
+KEY_LOCATION: kube-secrets or env var
+KEY_ROTATION_DAYS: 90
+
+### Autoridades de Comunicación - Primer Mandato
+COMMUNICATION_AUTHORITIES:
+  - name: "ANARTEL (Autoridad Nacional de Telecomunicaciones)"
+    type: "regulatory"
+    mandate: "first"
+    contact: "contacto@anartel.gov"
+    protocol: "official"
+  
+  - name: "Ministerio de Comunicaciones"
+    type: "government"
+    mandate: "first"
+    contact: "reportes@comunicaciones.gov"
+    protocol: "formal"
+  
+  - name: "ANIC (Autoridad Nacional de Infraestructura de Comunicaciones)"
+    type: "infrastructure"
+    mandate: "first"
+    contact: "compliance@anic.gov"
+    protocol: "official"
+
+### Gemini Integration for Report Generation
+GEMINI_TASKS:
+  - task: "report_generation"
+    description: "Generar reportes automáticos para autoridades de comunicación"
+    prompt_template: |
+      Analiza los datos del detector y genera un reporte formal para autoridades de comunicación.
+      Incluye: resumen ejecutivo, hallazgos técnicos, recomendaciones y cumplimiento normativo.
+      
+  - task: "legal_validation"
+    description: "Validar cumplimiento legal de reportes"
+    prompt_template: |
+      Verifica que el reporte cumple con regulaciones de comunicación del primer mandato.
+      Identifica requisitos pendientes y recomendaciones de conformidad.
+      
+  - task: "message_formatting"
+    description: "Dar formato profesional a mensajes dirigidos a autoridades"
+    prompt_template: |
+      Transforma los datos técnicos en lenguaje formal y accesible para autoridades regulatorias.
+
+### Delivery Configuration with AI Enhancement
+REPORT_DELIVERY_AI_ENABLED: true
+REPORT_DELIVERY_METHOD: "smtp_with_gemini_enhancement"
+REPORT_AI_PROCESSING:
+  enabled: true
+  temperature: 0.7
+  max_tokens: 2048
+  safety_settings: "high"
+
+### Authority-Specific Delivery Rules
+DELIVERY_RULES:
+  anartel:
+    recipient: "reportes@anartel.gov"
+    ai_task: "legal_validation"
+    format: "formal"
+    language: "spanish"
+    encryption: true
+    
+  ministerio_comunicaciones:
+    recipient: "reportes@comunicaciones.gov"
+    ai_task: "report_generation"
+    format: "executive_summary"
+    language: "spanish"
+    encryption: true
+    
+  anic:
+    recipient: "compliance@anic.gov"
+    ai_task: "message_formatting"
+    format: "technical"
+    language: "spanish"
+    encryption: true
+
+### Response Handling
+AI_RESPONSE_VALIDATION: true
+RESPONSE_REVIEW_REQUIRED: true
+RESPONSE_REVIEW_ROLE: "legal_compliance_officer"
+
+### Logging & Audit Trail
+AI_CALL_LOGGING:
+  enabled: true
+  log_location: "/logs/gemini-calls/"
+  retention_days: 365
+  fields:
+    - timestamp
+    - task_type
+    - input_tokens
+    - output_tokens
+    - authority_recipient
+    - status
+
+### Security & Compliance
+AI_SECURITY:
+  data_sanitization: true
+  pii_detection: true
+  pii_redaction: true
+  encryption_in_transit: true
+  encryption_at_rest: true
+  tls_version: "1.3"
+
+### Error Handling
+ERROR_HANDLING:
+  fallback_method: "manual_review"
+  retry_attempts: 3
+  retry_delay_seconds: 60
+  on_failure_notification:
+    - "zavalarogelio1984@gmail.com"
+    - "legal_team@organization.gov"
+
+### Cost Management
+GEMINI_API_COST_MONITORING:
+  enabled: true
+  budget_limit_monthly: "$500"
+  alert_threshold_percent: 80
+  alert_recipient: "finance@organization.gov"
+
+### Compliance Notes
+LEGAL_COMPLIANCE: |
+  - Integración con Google Gemini cumple con regulaciones de procesamiento de datos
+  - Todos los reportes pasan por validación legal antes de envío
+  - Se mantiene cadena de custodia completa de comunicaciones
+  - Autoridades de comunicación (primer mandato) reciben reportes en formato reglamentario
+  - Autorización legal requerida para envío automático
+
+### Implementation Checklist
+IMPLEMENTATION_STATUS:
+  - [ ] Google Gemini API Key configurada
+  - [ ] Autoridades de comunicación contactadas y verificadas
+  - [ ] Plantillas de prompt validadas por legal
+  - [ ] Pruebas end-to-end en staging completadas
+  - [ ] Auditoría de seguridad realizada
+  - [ ] Documentación actualizada
+  - [ ] Capacitación de operadores completada
+
+### Contact & Responsible
+IMPLEMENTATION_LEAD: "Zavala Rogelio"
+EMAIL: "zavalarogelio1984@gmail.com"
+LEGAL_REVIEW: "Required before production deployment"

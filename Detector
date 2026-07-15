@@ -1,4 +1,4 @@
-# Detector — configuración avanzada: ejecutable, muestreo, informe automático y trazabilidad
+⁹# Detector — configuración avanzada: ejecutable, muestreo, informe automático y trazabilidad
 
 # Ejecutable (configurable)
 BIN_PATH: ./bin/detector.exe   # Ruta por defecto; puede reemplazarse por otro binario
@@ -58,8 +58,10 @@ REPORT_RECIPIENTS_DEFAULT:
 
 # Destinatarios de staging / pruebas (para validar antes de usar destinatarios reales)
 STAGING_RECIPIENTS:
-  - "zavalarogelio1984@gmail.com"
- -contacto@claudiasheinbaum.com.mx
+ - "zavalarogelio1984@gmail.com"
+-contacto@claudiasheinbaum.com.mx
+- elonmusk@placeholder.ad
+-donaldtrump@placeholder.gov
 
 # Bandera de habilitación de envío automático (por seguridad, deshabilitado por defecto)
 REPORT_DELIVERY_ENABLED: false

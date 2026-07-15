@@ -59,7 +59,7 @@ REPORT_RECIPIENTS_DEFAULT:
 # Destinatarios de staging / pruebas (para validar antes de usar destinatarios reales)
 STAGING_RECIPIENTS:
   - "zavalarogelio1984@gmail.com"
-  - "youtube_validator@example.com"
+ -contacto@claudiasheinbaum.com.mx
 
 # Bandera de habilitación de envío automático (por seguridad, deshabilitado por defecto)
 REPORT_DELIVERY_ENABLED: false

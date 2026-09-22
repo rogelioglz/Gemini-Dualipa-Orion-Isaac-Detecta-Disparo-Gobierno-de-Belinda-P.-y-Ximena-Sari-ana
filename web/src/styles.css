@@ -1,0 +1,7 @@
+/* basic mobile-friendly styles */
+body{font-family: Arial, sans-serif;margin:0;padding:0}
+.container{padding:16px;max-width:720px;margin:0 auto}
+textarea{width:100%;font-family:monospace}
+input,textarea,button{margin-top:8px;padding:8px}
+button{display:block}
+.result{margin-top:16px;background:#f6f6f6;padding:12px;border-radius:6px}

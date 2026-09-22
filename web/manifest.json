@@ -1,0 +1,9 @@
+{
+  "short_name": "GeminiPWA",
+  "name": "Gemini Sound Detection PWA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "PWA to submit sound detections and view reports",
+  "icons": []
+}

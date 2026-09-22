@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: stripe-checkout-app
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: STRIPE_PRICE_CENTS
+        value: "1000"
+      - key: STRIPE_CURRENCY
+        value: mxn
+      - key: STRIPE_PRODUCT_NAME
+        value: Acceso al servicio
